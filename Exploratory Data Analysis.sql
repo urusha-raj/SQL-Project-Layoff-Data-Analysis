@@ -68,7 +68,7 @@ SELECT `MONTH`, total_off, SUM(total_off)
 OVER(ORDER BY `MONTH`) AS rolling_total
 FROM Rolling_Total;
 
--- 
+-- Using 2 CTE's to evaluate the ranks of companies by year having most no. of total_laid_off data --
 SELECT company,YEAR(`date`), SUM(total_laid_off)
 FROM layoffs_staging2
 GROUP BY company, YEAR(`date`)
